@@ -1,6 +1,6 @@
 # ELib\
-||Requirment :
-||   - Framework : laravel
+#||Requirment :
+#||   - Framework : laravel
 ||   - Template builder : bootstrap 4
 ||   - DB : SQL
 
