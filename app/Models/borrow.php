@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class borrow extends Model
 {
     use HasFactory;
+    
 }

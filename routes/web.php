@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\bookController;
 use Illuminate\Http\Request;
 
 /*
@@ -33,6 +34,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/user/edit/{id}', [userController::class,'edit']); 
         Route::get('/user/destroy/{id}', [userController::class,'destroy']); 
         Route::put('/user/update/{id}', [userController::class,'update']); 
+        // Route::resource('book', [bookController::class]);
+        Route::get('/book/index', [bookController::class,'index']); 
+        // Route::get('/book/create', [bookController::class,'create']); 
+        Route::post('/book/store', [bookController::class,'store']); 
+        Route::get('/book/edit/{id}', [bookController::class,'edit']); 
+        Route::get('/book/destroy/{id}', [bookController::class,'destroy']); 
+        Route::put('/book/update/{id}', [bookController::class,'update']); 
     });
     Route::get('/logout', function() {
         Auth::logout();
