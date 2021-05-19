@@ -49,7 +49,7 @@
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="fas fa-file-alt nav-icon"></i>
-              <p>Level 1</p>
+              <p>USER REPORT</p>
             </a>
           </li>
           <!-- <li class="nav-item">
