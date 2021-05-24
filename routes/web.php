@@ -23,7 +23,7 @@ Route::get('/', function () {
 Route::get('/user', function () {
     return view('UserLayout.index');
 });
-Route::get('/user2', function () {
+Route::get('/newuser', function () {
     return view('User2.index');
 });
 

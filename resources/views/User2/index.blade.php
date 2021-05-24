@@ -33,13 +33,8 @@
                         <span class="icon-bar"></span> 
                         <span class="icon-bar"></span> 
                         </button>
-                        <a href="index.html" class="navbar-brand"><img src="images/logo.png" alt="" /></a>
+                        <a href="index.html" class="navbar-brand"><img src="{{asset("user2/images/logo.png")}}" alt="" /></a>
                      </div>
-                     <form class="navbar-form navbar-left web-sh">
-                        <div class="form">
-                           <input type="text" class="form-control" placeholder="Search for products or companies">
-                        </div>
-                     </form>
                   </div>
                   <div class="col-md-8 col-sm-12">
                      <div class="right-nav">
@@ -54,16 +49,16 @@
                         <div class="help-r hidden-xs">
                            <div class="help-box">
                               <ul>
-                                 <li> <a data-toggle="modal" data-target="#myModal" href="#"> <span>Change</span> <img src="images/flag.png" alt="" /> </a> </li>
-                                 <li> <a href="#"><img class="h-i" src="images/help-icon.png" alt="" /> Help </a> </li>
+                                 <li><a href="howitworks.blade.php">Guide</a></li>
+                                 <li> <a href="#"><img class="h-i" src="{{asset("user2/images/help-icon.png")}}" alt="" /> Contact Us </a> </li>
                               </ul>
                            </div>
                         </div>
                         <div class="nav-b hidden-xs">
                            <div class="nav-box">
                               <ul>
-                                 <li><a href="howitworks.html">How it works</a></li>
-                                 <li><a href="about-us.html">Chamb for Business</a></li>
+                                 <li><a href="howitworks.blade.php">Home</a></li>
+                                 <li><a href="about-us.blade.php">About Us</a></li>
                               </ul>
                            </div>
                         </div>
@@ -74,24 +69,6 @@
             <!--/.container-fluid --> 
          </nav>
       </header>
-      <!-- Modal -->
-      <div class="modal fade lug" id="myModal" role="dialog">
-         <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-               <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Change</h4>
-               </div>
-               <div class="modal-body">
-                  <ul>
-                     <li><a href="#"><img src="images/flag-up-1.png" alt="" /> United States</a></li>
-                     <li><a href="#"><img src="images/flag-up-2.png" alt="" /> France </a></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
       <div id="sidebar" class="top-nav">
          <ul id="sidebar-nav" class="sidebar-nav">
             <li><a href="#">Help</a></li>
@@ -104,8 +81,8 @@
             <div class="container">
                <div class="row clearfix">
                   <div class="find-box">
-                     <h1>Find your next product or<br>business partner here.</h1>
-                     <h4>It has never been easier.</h4>
+                     <h1>Welcome To Elib Website<br>You can access us anywhere and anytime.</h1>
+                     <h4>What would you like to find.</h4>
                      <div class="product-sh">
                         <div class="col-sm-6">
                            <div class="form-sh">
@@ -115,9 +92,10 @@
                         <div class="col-sm-3">
                            <div class="form-sh">
                               <select class="selectpicker">
-                                 <option>Textiles</option>
-                                 <option>Furniture</option>
-                                 <option>Leather</option>
+                                 <option>Novel</option>
+                                 <option>Magazine</option>
+                                 <option>Journal</option>
+                                 <option>Journal</option>
                               </select>
                            </div>
                         </div>
@@ -128,12 +106,13 @@
                      </div>
                   </div>
                </div>
+               
                <div class="row clearfix">
                   <div class="col-lg-3 col-sm-6 col-md-3">
                      <a href="productpage.html">
                         <div class="box-img">
                            <h4>Product</h4>
-                           <img src="images/product/1.png" alt="" />
+                           <img src="{{asset("user2/images/trr1.jpg")}}" alt="" />
                         </div>
                      </a>
                   </div>
@@ -141,7 +120,7 @@
                      <a href="productpage.html">
                         <div class="box-img">
                            <h4>Product</h4>
-                           <img src="images/product/2.png" alt="" />
+                           <img src="{{asset("user2/images/trr2.jpg")}}" alt="" />
                         </div>
                      </a>
                   </div>
@@ -149,7 +128,7 @@
                      <a href="productpage.html">
                         <div class="box-img">
                            <h4>Product</h4>
-                           <img src="images/product/4.png" alt="" />
+                           <img src="{{asset("user2/images/trr3.jpg")}}" alt="" />
                         </div>
                      </a>
                   </div>
@@ -157,7 +136,7 @@
                      <a href="productpage.html">
                         <div class="box-img">
                            <h4>Product</h4>
-                           <img src="images/product/5.png" alt="" />
+                           <img src="{{asset("user2/images/trr4.jpg")}}" alt="" />
                         </div>
                      </a>
                   </div>
@@ -165,7 +144,7 @@
                      <a href="productpage.html">
                         <div class="box-img">
                            <h4>Product</h4>
-                           <img src="images/product/10.png" alt="" />
+                           <img src="{{asset("user2/images/trr5.jpg")}}" alt="" />
                         </div>
                      </a>
                   </div>
@@ -173,7 +152,7 @@
                      <a href="productpage.html">
                         <div class="box-img">
                            <h4>Product</h4>
-                           <img src="images/product/11.png" alt="" />
+                           <img src="{{asset("user2/images/trr6.jpg")}}" alt="" />
                         </div>
                      </a>
                   </div>
@@ -181,7 +160,7 @@
                      <a href="productpage.html">
                         <div class="box-img">
                            <h4>Product</h4>
-                           <img src="images/product/12.png" alt="" />
+                           <img src="{{asset("user2/images/trr7.jpg")}}" alt="" />
                         </div>
                      </a>
                   </div>
@@ -189,7 +168,7 @@
                      <a href="productpage.html">
                         <div class="box-img">
                            <h4>Product</h4>
-                           <img src="images/product/13.png" alt="" />
+                           <img src="{{asset("user2/images/trr8.jpg")}}" alt="" />
                         </div>
                      </a>
                   </div>
@@ -206,10 +185,10 @@
                <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.0s">
                   <div class="panel panel-default">
                      <div class="panel-body">
-                        <img src="images/xpann-icon.jpg" class="icon-small" alt="">
-                        <h4>“Chamb” Your Business</h4>
-                        <p>Grow easily with chamb. Create free account.
-                           We help expanding your business easily.
+                        <img src="{{asset("user2/images/xpann-icon.jpg")}}" class="icon-small" alt="">
+                        <h4>“Choose” Your Desired Book</h4>
+                        <p>You can search by looking at the list of book.
+                           or you can just use Search Feature in Home.
                         </p>
                      </div>
                   </div>
@@ -217,10 +196,10 @@
                <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
                   <div class="panel panel-default">
                      <div class="panel-body">
-                        <img src="images/create-icon.jpg" class="icon-small" alt="">
-                        <h4>Create and add</h4>
-                        <p>Grow easily with chamb. Create free account.
-                           We help expanding your business easily.
+                        <img src="{{asset("user2/images/create-icon.jpg")}}" class="icon-small" alt="">
+                        <h4>Fill Borrow Form</h4>
+                        <p>there some form that need to be filled.
+                           the filled it with the right data.
                         </p>
                      </div>
                   </div>
@@ -228,11 +207,160 @@
                <div class="col-md-4 col-sm-6 wow fadeIn hidden-sm" data-wow-delay="0.4s">
                   <div class="panel panel-default">
                      <div class="panel-body">
-                        <img src="images/get-icon.jpg" class="icon-small" alt="">
-                        <h4>Get inspired</h4>
-                        <p>Grow easily with chamb. Create free account.
-                           We help expanding your business easily.
+                        <img src="{{asset("user2/images/get-icon.jpg")}}" class="icon-small" alt="">
+                        <h4>Get your Report</h4>
+                        <p>After the Data sent and has been confirmed.
+                           You will get your Report information.
                         </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="products">
+         <div class="main-products">
+            <h2>TRENDING BOOKS ON THIS YEAR</h2>
+            <div class="product-slidr">
+               <div class="slider">
+                  <div>
+                     <div class="prod-box">
+                        <div class="prod-i">
+                           <img src="{{asset("user2/images/trr7.jpg")}}" alt="#" />
+                        </div>
+                        <div class="prod-dit clearfix">
+                           <div class="dit-t clearfix">
+                              <div class="left-ti">
+                                 <h4>Pulang pergi</h4>
+                                 <p>By <span>Tereliye</span> in <span>2021</span></p>
+                              </div>
+                              <a href="#">Available</a>
+                           </div>
+                           <div class="dit-btn clearfix">
+                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> More Detail </a>
+                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Select this </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="prod-box">
+                        <div class="prod-i">
+                           <img src="{{asset("user2/images/trr8.jpg")}}" alt="#" />
+                        </div>
+                        <div class="prod-dit clearfix">
+                           <div class="dit-t clearfix">
+                              <div class="left-ti">
+                                 <h4>Pulang pergi</h4>
+                                 <p>By <span>Tereliye</span> in <span>2021</span></p>
+                              </div>
+                              <a href="#">Available</a>
+                           </div>
+                           <div class="dit-btn clearfix">
+                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> More Detail </a>
+                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Select this</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="prod-box">
+                        <div class="prod-i">
+                           <img src="{{asset("user2/images/trr5.jpg")}}" alt="#" />
+                        </div>
+                        <div class="prod-dit clearfix">
+                           <div class="dit-t clearfix">
+                              <div class="left-ti">
+                                 <h4>Pulang pergi</h4>
+                                 <p>By <span>Tereliye</span> in <span>2021</span></p>
+                              </div>
+                              <a href="#">Available</a>
+                           </div>
+                           <div class="dit-btn clearfix">
+                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> More Detail </a>
+                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Select this </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="prod-box">
+                        <div class="prod-i">
+                           <img src="{{asset("user2/images/trr4.jpg")}}" alt="#" />
+                        </div>
+                        <div class="prod-dit clearfix">
+                           <div class="dit-t clearfix">
+                              <div class="left-ti">
+                                 <h4>Pulang pergi</h4>
+                                 <p>By <span>Tereliye</span> in <span>2021</span></p>
+                              </div>
+                              <a href="#">Available</a>
+                           </div>
+                           <div class="dit-btn clearfix">
+                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> More Detail </a>
+                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Select this</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="prod-box">
+                        <div class="prod-i">
+                           <img src="{{asset("user2/images/trr1.jpg")}}" alt="#" />
+                        </div>
+                        <div class="prod-dit clearfix">
+                           <div class="dit-t clearfix">
+                              <div class="left-ti">
+                                 <h4>Pulang pergi</h4>
+                                 <p>By <span>Tereliye</span> in <span>2021</span></p>
+                              </div>
+                              <a href="#">Available</a>
+                           </div>
+                           <div class="dit-btn clearfix">
+                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> More Detail </a>
+                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Select this</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="prod-box">
+                        <div class="prod-i">
+                           <img src="{{asset("user2/images/trr2.jpg")}}" alt="#" />
+                        </div>
+                        <div class="prod-dit clearfix">
+                           <div class="dit-t clearfix">
+                              <div class="left-ti">
+                                 <h4>Pulang pergi</h4>
+                                 <p>By <span>Tereliye</span> in <span>2021</span></p>
+                              </div>
+                              <a href="#">Available</a>
+                           </div>
+                           <div class="dit-btn clearfix">
+                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> More Detail </a>
+                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Select this</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="prod-box">
+                        <div class="prod-i">
+                           <img src="{{asset("user2/images/trr3.jpg")}}" alt="#" />
+                        </div>
+                        <div class="prod-dit clearfix">
+                           <div class="dit-t clearfix">
+                              <div class="left-ti">
+                                 <h4>Pulang pergi</h4>
+                                 <p>By <span>Tereliye</span> in <span>2021</span></p>
+                              </div>
+                              <a href="#">Available</a>
+                           </div>
+                           <div class="dit-btn clearfix">
+                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> More Detail </a>
+                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Select this</a>
+                           </div>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -244,30 +372,31 @@
             <div class="row">
                <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
                   <div class="exciting_box f_pd">
-                     <img src="images/exciting_img-01.jpg" class="icon-small" alt="" />
-                     <h4>Explore <strong>exciting</strong> and exotic products
-                        tailored to you.
+                     <img src="{{asset("user2/images/exciting_img-01.jpg")}}" class="icon-small" alt="" />
+                     <h4>Syarat-syarat Pengembalian
                      </h4>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris..
+                     <p>-
+                        -
+                        -
+                        -
                      </p>
                   </div>
                </div>
                <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
                   <div class="exciting_box l_pd">
-                     <img src="images/exciting_img-02.jpg" class="icon-small" alt="" />
-                     <h4><strong>List your products on</strong> chamb and grow connections.</h4>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris..
+                     <img src="{{asset("user2/images/exciting_img-02.jpg")}}" class="icon-small" alt="" />
+                     <h4>Syarat-syarat Peminjaman</h4>
+                     <p>-
+                        -
+                        -
+                        -
                      </p>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <div class="start-free-box">
+      <!--<div class="start-free-box">
          <div class="container">
             <div class="row">
                <div class="container">
@@ -292,12 +421,12 @@
             </div>
             <div class="row">
                <div class="main-start-box">
-                  <div class="bg_img_left"><img src="images/bg_img1.png" alt="#" /></div>
+                  <div class="bg_img_left"><img src="{{asset("user2/images/bg_img1.png")}}" alt="#" /></div>
                   <div class="container">
                      <div class="buyer-box clearfix">
                         <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
                            <div class="left-buyer">
-                              <img class="img-responsive" src="images/creat_pro.png" alt="#" />
+                              <img class="img-responsive" src="{{asset("user2/images/creat_pro.png")}}" alt="#" />
                            </div>
                         </div>
                         <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
@@ -319,7 +448,7 @@
                </div>
             </div>
             <div class="row">
-               <div class="bg_img_right"><img src="images/bg_img1.png" alt="#" /></div>
+               <div class="bg_img_right"><img src="{{asset("user2/images/bg_img1.png")}}" alt="#" /></div>
                <div class="main-start-box">
                   <div class="container">
                      <div class="supplier clearfix">
@@ -338,7 +467,7 @@
                         </div>
                         <div class="col-md-7 col-sm-6">
                            <div class="right-supplier">
-                              <img class="img-responsive" src="images/supplier-pc-img.png" alt="#" />
+                              <img class="img-responsive" src="{{asset("user2/images/supplier-pc-img.png")}}" alt="#" />
                            </div>
                         </div>
                      </div>
@@ -346,161 +475,12 @@
                </div>
             </div>
          </div>
-      </div>
-      <div class="products">
-         <div class="main-products">
-            <h2>TRENDING PRODUCTS ON CHAMB</h2>
-            <div class="product-slidr">
-               <div class="slider">
-                  <div>
-                     <div class="prod-box">
-                        <div class="prod-i">
-                           <img src="images/tr1.png" alt="#" />
-                        </div>
-                        <div class="prod-dit clearfix">
-                           <div class="dit-t clearfix">
-                              <div class="left-ti">
-                                 <h4>Table with Lights</h4>
-                                 <p>By <span>Beko</span> under <span>Lights</span></p>
-                              </div>
-                              <a href="#">$1220</a>
-                           </div>
-                           <div class="dit-btn clearfix">
-                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div>
-                     <div class="prod-box">
-                        <div class="prod-i">
-                           <img src="images/tr2.png" alt="#" />
-                        </div>
-                        <div class="prod-dit clearfix">
-                           <div class="dit-t clearfix">
-                              <div class="left-ti">
-                                 <h4>Treehouse Bed</h4>
-                                 <p>By <span>Beko</span> under <span>Lights</span></p>
-                              </div>
-                              <a href="#">$1220</a>
-                           </div>
-                           <div class="dit-btn clearfix">
-                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div>
-                     <div class="prod-box">
-                        <div class="prod-i">
-                           <img src="images/tr3.png" alt="#" />
-                        </div>
-                        <div class="prod-dit clearfix">
-                           <div class="dit-t clearfix">
-                              <div class="left-ti">
-                                 <h4>Wood Sofaplatform</h4>
-                                 <p>By <span>Beko</span> under <span>Lights</span></p>
-                              </div>
-                              <a href="#">$1220</a>
-                           </div>
-                           <div class="dit-btn clearfix">
-                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div>
-                     <div class="prod-box">
-                        <div class="prod-i">
-                           <img src="images/tr4.png" alt="#" />
-                        </div>
-                        <div class="prod-dit clearfix">
-                           <div class="dit-t clearfix">
-                              <div class="left-ti">
-                                 <h4>Wall Sticker</h4>
-                                 <p>By <span>Beko</span> under <span>Lights</span></p>
-                              </div>
-                              <a href="#">$1220</a>
-                           </div>
-                           <div class="dit-btn clearfix">
-                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div>
-                     <div class="prod-box">
-                        <div class="prod-i">
-                           <img src="images/tr1.png" alt="#" />
-                        </div>
-                        <div class="prod-dit clearfix">
-                           <div class="dit-t clearfix">
-                              <div class="left-ti">
-                                 <h4>Treehouse Bed</h4>
-                                 <p>By <span>Beko</span> under <span>Lights</span></p>
-                              </div>
-                              <a href="#">$1220</a>
-                           </div>
-                           <div class="dit-btn clearfix">
-                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div>
-                     <div class="prod-box">
-                        <div class="prod-i">
-                           <img src="images/tr2.png" alt="#" />
-                        </div>
-                        <div class="prod-dit clearfix">
-                           <div class="dit-t clearfix">
-                              <div class="left-ti">
-                                 <h4>Treehouse Bed</h4>
-                                 <p>By <span>Beko</span> under <span>Lights</span></p>
-                              </div>
-                              <a href="#">$1220</a>
-                           </div>
-                           <div class="dit-btn clearfix">
-                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div>
-                     <div class="prod-box">
-                        <div class="prod-i">
-                           <img src="images/tr3.png" alt="#" />
-                        </div>
-                        <div class="prod-dit clearfix">
-                           <div class="dit-t clearfix">
-                              <div class="left-ti">
-                                 <h4>Treehouse Bed</h4>
-                                 <p>By <span>Beko</span> under <span>Lights</span></p>
-                              </div>
-                              <a href="#">$1220</a>
-                           </div>
-                           <div class="dit-btn clearfix">
-                              <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                              <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+      </div>-->
       <footer>
          <div class="main-footer">
             <div class="container">
                <div class="row">
-                  <div class="footer-top clearfix">
+                  <!--<div class="footer-top clearfix">
                      <div class="col-md-2 col-sm-6">
                         <h2>Start a free
                            account today
@@ -518,63 +498,35 @@
                            <p>Easy setup - no payment fees - up to 100 products for free</p>
                         </div>
                      </div>
-                  </div>
+                  </div>-->
                   <div class="footer-link-box clearfix">
                      <div class="col-md-6 col-sm-6">
                         <div class="left-f-box">
                            <div class="col-sm-4">
-                              <h2>SELL ON chamb</h2>
+                              <h2>INFORMATION</h2>
                               <ul>
-                                 <li><a href="#">Create account</a></li>
-                                 <li><a href="howitworks.html">How it works suppliers</a></li>
-                                 <li><a href="pricing.html">Pricing</a></li>
-                                 <li><a href="#">FAQ for Suppliers</a></li>
+                                 <li><a href="#">Guide</a></li>
+                                 <li><a href="#">Rule and Regulations</a></li>
+                                 <li><a href="#">Term and Conditions</a></li>
                               </ul>
                            </div>
                            <div class="col-sm-4">
-                              <h2>BUY ON chamb</h2>
+                              <h2>RESOURCE</h2>
                               <ul>
-                                 <li><a href="#">Create account</a></li>
-                                 <li><a href="#">How it works buyers</a></li>
-                                 <li><a href="#">Categories</a></li>
-                                 <li><a href="#">FAQ for buyers</a></li>
-                              </ul>
-                           </div>
-                           <div class="col-sm-4">
-                              <h2>COMPANY</h2>
-                              <ul>
-                                 <li><a href="about-us.html">About chamb</a></li>
-                                 <li><a href="#">Contact us</a></li>
-                                 <li><a href="#">Press</a></li>
-                                 <li><a href="#">Careers</a></li>
-                                 <li><a href="#">Terms of use</a></li>
+                                 <li><a href="#">Home </a></li>
+                                 <li><a href="#">About Us</a></li>
+                                 <li><a href="#">Contact Us</a></li>
                               </ul>
                            </div>
                         </div>
                      </div>
                      <div class="col-md-6 col-sm-6">
-                        <div class="right-f-box">
-                           <h2>INDUSTRIES</h2>
-                           <ul class="col-sm-4">
-                              <li><a href="#">Textiles</a></li>
-                              <li><a href="#">Furniture</a></li>
-                              <li><a href="#">Leather</a></li>
-                              <li><a href="#">Agriculture</a></li>
-                              <li><a href="#">Food & drinks</a></li>
-                           </ul>
-                           <ul class="col-sm-4">
-                              <li><a href="#">Office</a></li>
-                              <li><a href="#">Decoratives</a></li>
-                              <li><a href="#">Electronics</a></li>
-                              <li><a href="#">Machines</a></li>
-                              <li><a href="#">Building</a></li>
-                           </ul>
-                           <ul class="col-sm-4">
-                              <li><a href="#">Cosmetics</a></li>
-                              <li><a href="#">Health</a></li>
-                              <li><a href="#">Jewelry</a></li>
-                              <li><a href="#">See all here</a></li>
-                           </ul>
+                        <div class="col-md-12 col-sm-12">
+                           <div class="help-box-f">
+                              <h1 style="color: white">Start your new Account</h1><br><br>
+                              <h4>Question? Call us on 12 34 56 78 for help</h4>
+                              <p>Easy setup - no payment fees - up to 100 products for free</p>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -585,7 +537,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-8">
-                     <p><img width="90" src="images/logo.png" alt="#" style="margin-top: -5px;" /> All Rights Reserved. Company Name © 2018</p>
+                     <p><img width="90" src="{{asset("user2/images/logo.png")}}" alt="#" style="margin-top: -5px;" /> All Rights Reserved.Elib © 2021</p>
                   </div>
                   <div class="col-md-4">
                      <ul class="list-inline socials">
@@ -610,9 +562,9 @@
                            </a>
                         </li>
                      </ul>
-                     <ul class="right-flag">
-                        <li><a href="#"><img src="images/flag.png" alt="" /> <span>Change</span></a></li>
-                     </ul>
+                     <!--<ul class="right-flag">
+                        <li><a href="#"><img src="{{asset("user2/images/flag.png")}}" alt="" /> <span>Change</span></a></li>
+                     </ul>-->
                   </div>
                </div>
             </div>
