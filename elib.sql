@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2021 at 09:45 AM
+-- Generation Time: May 15, 2021 at 09:50 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -128,8 +128,7 @@ CREATE TABLE `level` (
 
 INSERT INTO `level` (`id`, `level_name`) VALUES
 (1, 'admin'),
-(2, 'librarian'),
-(3, 'customer');
+(2, 'customer');
 
 -- --------------------------------------------------------
 
@@ -192,10 +191,11 @@ CREATE TABLE `report` (
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL,
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_level` bigint(20) NOT NULL DEFAULT 3,
+  `id_level` bigint(20) NOT NULL DEFAULT 2,
+  `profile` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT 'img/profile.png',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -205,10 +205,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `email_verified_at`, `password`, `id_level`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@admin.com', NULL, '$2y$10$EhV.jW1pNyVW5RB/22D8yOVuYYYEHDVdyVGwaThlzwxYvpzJD3mKm', 1, NULL, '2021-05-09 00:30:47', '2021-05-09 00:30:47'),
-(2, 'librarian', 'librarian@librarian.com', NULL, '$2y$10$nDtdUAqLYz6TI/QVGcomw.7Vay/tAJoRqNlbIsbfu7EnFwZ8tYaBG', 2, NULL, '2021-05-09 00:31:22', '2021-05-09 00:31:22'),
-(3, 'customer', 'customer@customer.com', NULL, '$2y$10$gPD.IT0jwi.FqMxVCZgs0OTNp1OEPOx27u.r771HeYhLGQBR04R/W', 3, NULL, '2021-05-09 00:31:50', '2021-05-09 00:31:50');
+INSERT INTO `users` (`id`, `username`, `email`, `email_verified_at`, `password`, `id_level`, `profile`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin@admin.com', NULL, '$2y$10$EhV.jW1pNyVW5RB/22D8yOVuYYYEHDVdyVGwaThlzwxYvpzJD3mKm', 1, 'img/profile.png', NULL, '2021-05-09 00:30:47', '2021-05-09 00:30:47'),
+(2, 'customer', 'customer@customer.com', NULL, '$2y$10$gPD.IT0jwi.FqMxVCZgs0OTNp1OEPOx27u.r771HeYhLGQBR04R/W', 2, 'img/profile.png', NULL, '2021-05-09 00:31:50', '2021-05-09 00:31:50');
 
 --
 -- Indexes for dumped tables
