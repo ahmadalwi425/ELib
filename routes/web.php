@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/user', function () {
     return view('UserLayout.index');
 });
+Route::get('/user2', function () {
+    return view('User2.index');
+});
 
 Auth::routes();
 
