@@ -23,9 +23,19 @@ Route::get('/', function () {
 Route::get('/user', function () {
     return view('UserLayout.index');
 });
-Route::get('/newuser', function () {
-    return view('User2.index');
+Route::get('/user2/index', [bookController::class,'searchbook']); 
+Route::get('/user2/show', [bookController::class,'showbuku']); 
+Route::get('/user2/bookpage/{id}', [bookController::class,'show2']); 
+Route::get('/user2/req/{id}', [bookController::class,'requestborrow']); 
+Route::get('/user2/book', function () {
+    return view('User2.bookpage');
 });
+Route::get('/user2/guide', function () {
+    return view('User2.guide');
+});
+// Route::get('/newuser', function () {
+//     return view('User2.index');
+// });
 
 Auth::routes();
 
@@ -47,7 +57,8 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/book/store', [bookController::class,'store']); 
         Route::get('/book/edit/{id}', [bookController::class,'edit']); 
         Route::get('/book/destroy/{id}', [bookController::class,'destroy']); 
-        Route::put('/book/update/{id}', [bookController::class,'update']); 
+        Route::put('/book/update/{id}', [bookController::class,'update']);
+        //Route::get('/user2/index', [bookController::class,'index']);  
     });
     Route::get('/logout', function() {
         Auth::logout();

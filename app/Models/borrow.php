@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class borrow extends Model
 {
     use HasFactory;
-    
+    protected $table = 'book';
+    public $timestamps = false;
+    protected $guarded = [];
 }
