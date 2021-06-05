@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\level;
+use App\Models\book;
 
 class User extends Authenticatable
 {
@@ -46,5 +47,11 @@ class User extends Authenticatable
 
     public function level(){
         return $this->belongsTo(level::class, 'id_level');
+    }
+    public function booklibrarian(){
+        return $this->belongsToMany(book::class, 'borrow','id_book','id_librarian')->withPivot('id_borrower','date_borrow','date_due','date_return');
+    }
+    public function bookborrower(){
+        return $this->belongsToMany(book::class, 'borrow','id_book','id_borrower')->withPivot('id_librarian','date_borrow','date_due','date_return');
     }
 }
