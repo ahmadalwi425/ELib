@@ -55,5 +55,6 @@ class User extends Authenticatable
 
     public function book_borrower(){
         return $this->belongsToMany(book::class, 'borrow', 'id_borrower', 'id_book')->withPivot('date_borrow','date_due','date_return');
+    
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\genre;
 use App\Models\category;
 use App\Models\book;
+use App\Models\borrow;
 
 class bookController extends Controller
 {
@@ -20,6 +21,43 @@ class bookController extends Controller
         $cat = category::all();
         $gen = genre::all();
         return view('book.index',  compact('data','cat','gen'));
+    }
+    public function showbuku()
+    {
+        $data = book::with('category', 'genre')->paginate(6);
+        $cat = category::all();
+        $gen = genre::all();
+        // dd($data);
+        return view('user2.index',  compact('data','cat','gen'));
+    }
+    public function searchbook(Request $request){
+        // $search = request()->query('search');
+        // if($search){
+        //     $data = book::with('category','genre')
+        //     ->where('name','like',"%".$search."%")
+        //     ->orderBy('id_book','asc')
+        //     ->paginate();
+        //     $users = User::select("*")
+        //                 ->where('first_name', 'LIKE', '%'.$search.'%')
+        //                 ->orWhere('last_name', 'LIKE', '%'.$search.'%')
+        //                 ->orWhere('email', 'LIKE', '%'.$search.'%')
+        //                 ->get();
+        // }else{
+        //     $data = book::with('category', 'genre')->paginate(6);
+        //     $cat = category::all();
+        //     $gen = genre::all();
+        // }
+        $data = book::with('category', 'genre')->where('title', 'LIKE', '%'.$request->search.'%')
+        ->orwhere('id_category', 'LIKE', '%'.$request->category.'%')->paginate(6);
+        $cat = category::all();
+        $gen = genre::all();
+        // dd($data);
+        return view('user2.index',  compact('data','cat','gen'));
+        // the eloquent function to displays data
+        //$student = $student = DB::table('student')->get(); // Mengambil semua isi tabel
+        //$posts = Student::orderBy('Nim', 'desc')->paginate(6);
+        //return view('student.index', compact('student'));
+        //with('i', (request()->input('page', 1) - 1) * 5);  
     }
 
     /**
@@ -93,6 +131,22 @@ class bookController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function show2($id)
+    {
+        $data = book::with('category', 'genre')->where('id', $id)->first();
+        $cat = category::all();
+        $gen = genre::all();
+        return view('user2.bookpage', compact('data','cat','gen'));
+    }
+
+    public function show3($id)
+    {
+        $data = book::with('category', 'genre')->where('id', $id)->first();
+        $cat = category::all();
+        $gen = genre::all();
+        return view('user2.bookpage', compact('data','cat','gen'));
     }
 
     /**

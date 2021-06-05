@@ -28,5 +28,6 @@ class book extends Model
 
     public function librarian(){
         return $this->belongsToMany(User::class, 'borrow', 'id_book', 'id_librarian')->withPivot('date_borrow','date_due','date_return');
+
     }
 }
