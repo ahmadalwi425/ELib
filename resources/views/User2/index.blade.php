@@ -1,54 +1,5 @@
 @extends('User2.layout')
 @section('content')
-   <header id="header" class="top-head">
-      <!-- Static navbar -->
-      <nav class="navbar navbar-default">
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-md-4 col-sm-12 left-rs">
-                  <div class="navbar-header">
-                     <button type="button" id="top-menu" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"> 
-                     <span class="sr-only">Toggle navigation</span> 
-                     <span class="icon-bar"></span> 
-                     <span class="icon-bar"></span> 
-                     <span class="icon-bar"></span> 
-                     </button>
-                     <a href="index.html" class="navbar-brand">ELIB<img src="{{("user2/images/logo.png")}}" alt="" /></a>
-                  </div>
-               </div>
-               <div class="col-md-8 col-sm-12">
-                  <div class="right-nav">
-                     <div class="login-sr">
-                        <div class="login-signup">
-                           <ul>
-                              <li><a href="#">Login</a></li>
-                              <li><a class="custom-b" href="#">Sign up</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="help-r hidden-xs">
-                        <div class="help-box">
-                           <ul>
-                              <li><a href="{{url("User2/howitworks.blade.php")}}">Guide</a></li>
-                              <li> <a href="#"><img class="h-i" src="{{asset("user2/images/help-icon.png")}}" alt="" /> Contact Us </a> </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="nav-b hidden-xs">
-                        <div class="nav-box">
-                           <ul>
-                              <li><a href="howitworks.blade.php">Home</a></li>
-                              <li><a href="about-us.blade.php">About Us</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!--/.container-fluid --> 
-      </nav>
-   </header>
    <div id="sidebar" class="top-nav">
       <ul id="sidebar-nav" class="sidebar-nav">
          <li><a href="#">Help</a></li>
@@ -80,21 +31,24 @@
                         </div>
                      </div>
                      <div class="col-sm-3">
-                        <div class="form-sh"> <input type="submit" value="" class="btn btn-primary"> </div>
+                        <div class="form-sh2"><button class="btn btn-primary" type="submit">Search</button></div>
+                        {{-- <div class="form-sh2"><input type="submit" value="" class="btn btn-primary" value="Submit"></div> --}}
+                        {{-- <div class="form-sh"> <a class="btn" type="submit" href="#">Search</a> </div> --}}
                      </div>
                      </form>
                      <p>Or simply<a href="#"> click here </a> and get inspired!</p>
                   </div>
                </div>
-            </div>
-            
+            </div>       
             <div class="row clearfix">
                @if (count($data) > 0)
                   @foreach ($data as $bk)
                      <div class="col-lg-2 col-sm-6 col-md-2">
                         <a>
-                           <div class="box-img">
+                           <div class="box-img2">
                               <h4>{{ $bk->title }}</h4>
+                           </div>
+                           <div class="box-img">
                               <img width="150px" src="{{asset('storage/'.$bk->cover)}}" alt="" />
                            </div>
                            <a></a>
@@ -182,7 +136,7 @@
                <div class="panel panel-default">
                   <div class="panel-body">
                      <img src="{{asset("user2/images/xpann-icon.jpg")}}" class="icon-small" alt="">
-                     <h4>“Choose” Your Desired Book</h4>
+                     <h4>“Find” Your Desired Book</h4>
                      <p>You can search by looking at the list of book.
                         or you can just use Search Feature in Home.
                      </p>
@@ -219,18 +173,20 @@
          <h2>TRENDING BOOKS ON THIS YEAR</h2>
          <div class="product-slidr">
             <div class="slider">
+               @foreach ($data as $bk)
                <div>
                   <div class="prod-box">
                      <div class="prod-i">
-                        <img src="{{asset("user2/images/trr7.jpg")}}" alt="#" />
+                        <img width="150px" src="{{asset('storage/'.$bk->cover)}}" alt="" />
+                        {{-- <img src="{{asset("user2/images/trr7.jpg")}}" alt="#" /> --}}
                      </div>
                      <div class="prod-dit clearfix">
                         <div class="dit-t clearfix">
                            <div class="left-ti">
-                              <h4>Pulang pergi</h4>
+                              <h4>{{ $bk->title }}</h4>
                               <p>By <span>Tereliye</span> in <span>2021</span></p>
                            </div>
-                           <a href="#">Available</a>
+                           {{-- <a href="#">Available</a> --}}
                         </div>
                         <div class="dit-btn clearfix">
                            <a class="wis" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> More Detail </a>
@@ -239,7 +195,8 @@
                      </div>
                   </div>
                </div>
-               <div>
+               @endforeach
+               {{-- <div>
                   <div class="prod-box">
                      <div class="prod-i">
                         <img src="{{asset("user2/images/trr8.jpg")}}" alt="#" />
@@ -358,7 +315,7 @@
                         </div>
                      </div>
                   </div>
-               </div>
+               </div> --}}
             </div>
          </div>
       </div>
@@ -470,98 +427,4 @@
          </div>
       </div>
    </div>-->
-   <footer>
-      <div class="main-footer">
-         <div class="container">
-            <div class="row">
-               <!--<div class="footer-top clearfix">
-                  <div class="col-md-2 col-sm-6">
-                     <h2>Start a free
-                        account today
-                     </h2>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                     <div class="form-box">
-                        <input type="text" placeholder="Enter yopur e-mail" />
-                        <button>Continue</button>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-12">
-                     <div class="help-box-f">
-                        <h4>Question? Call us on 12 34 56 78 for help</h4>
-                        <p>Easy setup - no payment fees - up to 100 products for free</p>
-                     </div>
-                  </div>
-               </div>-->
-               <div class="footer-link-box clearfix">
-                  <div class="col-md-6 col-sm-6">
-                     <div class="left-f-box">
-                        <div class="col-sm-4">
-                           <h2>INFORMATION</h2>
-                           <ul>
-                              <li><a href="#">Guide</a></li>
-                              <li><a href="#">Rule and Regulations</a></li>
-                              <li><a href="#">Term and Conditions</a></li>
-                           </ul>
-                        </div>
-                        <div class="col-sm-4">
-                           <h2>RESOURCE</h2>
-                           <ul>
-                              <li><a href="#">Home </a></li>
-                              <li><a href="#">About Us</a></li>
-                              <li><a href="#">Contact Us</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                     <div class="col-md-12 col-sm-12">
-                        <div class="help-box-f">
-                           <h1 style="color: white">Start your new Account</h1><br><br>
-                           <h4>Question? Call us on 12 34 56 78 for help</h4>
-                           <p>Easy setup - no payment fees - up to 100 products for free</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="copyright">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-8">
-                  <p><img width="90" src="{{("user2/images/logo.png")}}" alt="#" style="margin-top: -5px;" /> All Rights Reserved.Elib © 2021</p>
-               </div>
-               <div class="col-md-4">
-                  <ul class="list-inline socials">
-                     <li>
-                        <a href="">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="">
-                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="#">
-                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                     </li>
-                  </ul>
-                  <!--<ul class="right-flag">
-                     <li><a href="#"><img src="{{asset("user2/images/flag.png")}}" alt="" /> <span>Change</span></a></li>
-                  </ul>-->
-               </div>
-            </div>
-         </div>
-      </div>
-   </footer>
 @endsection

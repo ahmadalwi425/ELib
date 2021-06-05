@@ -112,38 +112,6 @@
                                     <p>Paul luin</p>
                                  </div>
                               </li>
-                              {{-- <li class="clearfix">
-                                 <div class="col-md-4">
-                                    <h5>SKU number</h5>
-                                 </div>
-                                 <div class="col-md-8">
-                                    <p>SKU number</p>
-                                 </div>
-                              </li>
-                              <li class="clearfix">
-                                 <div class="col-md-4">
-                                    <h5>Shipping</h5>
-                                 </div>
-                                 <div class="col-md-8">
-                                    <p>Shipping worldwide</p>
-                                 </div>
-                              </li>
-                              <li class="clearfix">
-                                 <div class="col-md-4">
-                                    <h5>Warranty</h5>
-                                 </div>
-                                 <div class="col-md-8">
-                                    <p>1 years</p>
-                                 </div>
-                              </li>
-                              <li class="clearfix">
-                                 <div class="col-md-4">
-                                    <h5>Delivery</h5>
-                                 </div>
-                                 <div class="col-md-8">
-                                    <p>Choose country</p>
-                                 </div>
-                              </li> --}}
                            </ul>
                         </div>
                      </div>
@@ -234,9 +202,9 @@
                </div>
                <div class="col-md-3 col-sm-12">
                   <div class="price-box-right">
-                     <h4>Price</h4>
-                     <h3>$1.320 <span>pr.peice</span></h3>
-                     <p>Option</p>
+                     <h4>Available</h4>
+                     <h3>Remaining Stock : 3</h3>
+                     {{-- <p>Option</p>
                      <select class="form-control select2">
                         <option>Flying Carpet Green rug</option>
                         <option value="AK">Alaska</option>
@@ -260,118 +228,12 @@
                         <option value="IA">Iowa</option>
                         <option value="KS">Kansas</option>
                         <option value="KY">Kentucky</option>
-                     </select>
-                     <a href="#">Contact company</a>
-                     <h5><i class="fa fa-clock-o" aria-hidden="true"></i> <strong>16 hours</strong> avg. responsive time</h5>
+                     </select> --}}
+                     <a href="#">Borrow</a>
+                     <h5><i class="fa fa-clock-o" aria-hidden="true"></i> <strong>1 Week </strong> Maximum borrowed</h5>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      
-      <footer>
-         <div class="main-footer">
-            <div class="container">
-               <div class="row">
-                  <!--<div class="footer-top clearfix">
-                     <div class="col-md-2 col-sm-6">
-                        <h2>Start a free
-                           account today
-                        </h2>
-                     </div>
-                     <div class="col-md-6 col-sm-6">
-                        <div class="form-box">
-                           <input type="text" placeholder="Enter yopur e-mail" />
-                           <button>Continue</button>
-                        </div>
-                     </div>
-                     <div class="col-md-4 col-sm-12">
-                        <div class="help-box-f">
-                           <h4>Question? Call us on 12 34 56 78 for help</h4>
-                           <p>Easy setup - no payment fees - up to 100 products for free</p>
-                        </div>
-                     </div>
-                  </div>-->
-                  <div class="footer-link-box clearfix">
-                     <div class="col-md-6 col-sm-6">
-                        <div class="left-f-box">
-                           <div class="col-sm-4">
-                              <h2>INFORMATION</h2>
-                              <ul>
-                                 <li><a href="#">Guide</a></li>
-                                 <li><a href="#">Rule and Regulations</a></li>
-                                 <li><a href="#">Term and Conditions</a></li>
-                              </ul>
-                           </div>
-                           <div class="col-sm-4">
-                              <h2>RESOURCE</h2>
-                              <ul>
-                                 <li><a href="#">Home </a></li>
-                                 <li><a href="#">About Us</a></li>
-                                 <li><a href="#">Contact Us</a></li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-6 col-sm-6">
-                        <div class="col-md-12 col-sm-12">
-                           <div class="help-box-f">
-                              <h1 style="color: white">Start your new Account</h1><br><br>
-                              <h4>Question? Call us on 12 34 56 78 for help</h4>
-                              <p>Easy setup - no payment fees - up to 100 products for free</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="copyright">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-8">
-                     <p><img width="90" src="{{("user2/images/logo.png")}}" alt="#" style="margin-top: -5px;" /> All Rights Reserved.Elib © 2021</p>
-                  </div>
-                  <div class="col-md-4">
-                     <ul class="list-inline socials">
-                        <li>
-                           <a href="">
-                           <i class="fa fa-facebook" aria-hidden="true"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="">
-                           <i class="fa fa-twitter" aria-hidden="true"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="">
-                           <i class="fa fa-instagram" aria-hidden="true"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                           <i class="fa fa-linkedin" aria-hidden="true"></i>
-                           </a>
-                        </li>
-                     </ul>
-                     <!--<ul class="right-flag">
-                        <li><a href="#"><img src="{{asset("user2/images/flag.png")}}" alt="" /> <span>Change</span></a></li>
-                     </ul>-->
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
-      <!--main js--> 
-      <script src="js/jquery-1.12.4.min.js"></script> 
-      <!--bootstrap js--> 
-      <script src="js/bootstrap.min.js"></script> 
-      <script src="js/bootstrap-select.min.js"></script>
-      <script src="js/slick.min.js"></script> 
-      <script src="js/select2.full.min.js"></script> 
-      <script src="js/wow.min.js"></script> 
-      <!--custom js--> 
-      <script src="js/custom.js"></script>
-   </body>
    @endsection
