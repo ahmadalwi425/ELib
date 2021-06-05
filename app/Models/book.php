@@ -21,10 +21,13 @@ class book extends Model
         return $this->belongsTo(genre::class, 'id_genre');
     }
     protected $guarded = [];
-    public function librarian(){
-        return $this->belongsToMany(User::class, 'borrow','id_librarian','id_book')->withPivot('id_borrower','date_borrow','date_due','date_return');
-    }
+
     public function borrower(){
-        return $this->belongsToMany(User::class, 'borrow','id_borrower','id_book')->withPivot('id_librarian','date_borrow','date_due','date_return');
+        return $this->belongsToMany(User::class, 'borrow', 'id_book', 'id_borrower')->withPivot('date_borrow','date_due','date_return');
+    }
+
+    public function librarian(){
+        return $this->belongsToMany(User::class, 'borrow', 'id_book', 'id_librarian')->withPivot('date_borrow','date_due','date_return');
+
     }
 }

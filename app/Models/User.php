@@ -48,10 +48,13 @@ class User extends Authenticatable
     public function level(){
         return $this->belongsTo(level::class, 'id_level');
     }
-    public function booklibrarian(){
-        return $this->belongsToMany(book::class, 'borrow','id_book','id_librarian')->withPivot('id_borrower','date_borrow','date_due','date_return');
+    
+    public function book_librarian(){
+        return $this->belongsToMany(book::class, 'borrow', 'id_librarian', 'id_book')->withPivot('date_borrow','date_due','date_return');
     }
-    public function bookborrower(){
-        return $this->belongsToMany(book::class, 'borrow','id_book','id_borrower')->withPivot('id_librarian','date_borrow','date_due','date_return');
+
+    public function book_borrower(){
+        return $this->belongsToMany(book::class, 'borrow', 'id_borrower', 'id_book')->withPivot('date_borrow','date_due','date_return');
+    
     }
 }

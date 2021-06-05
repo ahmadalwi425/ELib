@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\level;
+use Carbon\Carbon;
 
 class borrowController extends Controller
 {
@@ -13,7 +16,9 @@ class borrowController extends Controller
      */
     public function index()
     {
-        //
+        $data = User::with('book_borrower')->get();
+        return view('user.index',  compact('data'));
+
     }
 
     /**
