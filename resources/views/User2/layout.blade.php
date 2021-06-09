@@ -40,8 +40,18 @@
                      <div class="login-sr">
                         <div class="login-signup">
                            <ul>
+                           @guest
                               <li><a href="{{url("login")}}">Login</a></li>
                               <li><a class="custom-b" href="{{ route('register') }}">Sign up</a></li>
+                           @else
+                              @if(Auth::User()->id_level == 1)
+                              <li><a class="custom-b" href="{{ url('/user/index') }}">Manage Web</a></li>
+                              @endif
+                              <li><a class="custom-b" href="{{ route('logout') }}" >Log Out</a></li>
+                              <!-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                       @csrf
+                                    </form> -->
+                           @endguest
                            </ul>
                         </div>
                      </div>

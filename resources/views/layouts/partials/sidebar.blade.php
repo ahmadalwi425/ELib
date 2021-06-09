@@ -45,11 +45,17 @@
               <p>Book</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ url('/borrow/index') }}" class="nav-link">
+              <i class="nav-icon fas fa-praying-hands"></i>
+              <p>Borrow</p>
+            </a>
+          </li>
           <li class="nav-header">REPORT MENU</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-file-alt nav-icon"></i>
-              <p>USER REPORT</p>
+            <a href="{{ url('/pdf/borrow') }}" class="nav-link">
+              <i class="fas fa-print nav-icon"></i>
+              <p>Borrow Report</p>
             </a>
           </li>
           <!-- <li class="nav-item">
@@ -104,12 +110,7 @@
               </li>
             </ul>
           </li> -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-file-alt nav-icon"></i>
-              <p>Level 1</p>
-            </a>
-          </li>
+          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

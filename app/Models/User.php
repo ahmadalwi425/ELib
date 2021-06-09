@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\level;
 use App\Models\book;
+use App\Models\borrow;
 
 class User extends Authenticatable
 {
@@ -50,11 +51,13 @@ class User extends Authenticatable
     }
     
     public function book_librarian(){
-        return $this->belongsToMany(book::class, 'borrow', 'id_librarian', 'id_book')->withPivot('date_borrow','date_due','date_return');
+        return $this->belongsToMany(book::class, 'borrow', 'id_librarian', 'id_book')->withPivot('date_borrow','date_due','date_return','status');
     }
 
     public function book_borrower(){
-        return $this->belongsToMany(book::class, 'borrow', 'id_borrower', 'id_book')->withPivot('date_borrow','date_due','date_return');
-    
+        return $this->belongsToMany(book::class, 'borrow', 'id_borrower', 'id_book')->withPivot('date_borrow','date_due','date_return','status');
+    }
+    public function borrow(){
+        return $this->hasMany(borrow::class, 'id');
     }
 }

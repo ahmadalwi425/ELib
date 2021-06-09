@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\bookController;
+use App\Http\Controllers\borrowController;
 use App\Http\Controllers\pdfController;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('user2/index');
 });
 
 Route::get('/user', function () {
@@ -27,7 +28,12 @@ Route::get('/user', function () {
 Route::get('/user2/index', [bookController::class,'searchbook']); 
 Route::get('/user2/show', [bookController::class,'showbuku']); 
 Route::get('/user2/bookpage/{id}', [bookController::class,'show2']); 
-Route::get('/user2/req/{id}', [bookController::class,'requestborrow']); 
+Route::get('/user2/req/{id}', [borrowController::class,'store']); 
+Route::post('/borrow/req', [borrowController::class,'store2']); 
+Route::get('/borrow/acc/{id}', [borrowController::class,'acc']); 
+Route::get('/borrow/refuse/{id}', [borrowController::class,'refuse']); 
+Route::get('/borrow/return/{id}', [borrowController::class,'return']); 
+Route::get('/pdf/borrow', [pdfController::class,'borrow']); 
 Route::get('/user2/book', function () {
     return view('User2.bookpage');
 });
@@ -40,11 +46,9 @@ Route::get('/user2/guide', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::middleware(['auth'])->group(function () {
 
+Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::middleware(['admin'])->group(function () {
         // Route::resource('user', [userController::class]);
         Route::get('/user/index', [userController::class,'index']); 
         Route::get('/user/create', [userController::class,'create']); 
@@ -63,7 +67,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/pdf/user', [pdfController::class,'print_user']); 
         // Route::get('/user/index', [userController::class,'index']); 
 
-    });
+        Route::get('/borrow/index', [borrowController::class,'index']); 
+        Route::get('/borrow/create', [borrowController::class,'create']); 
+        Route::post('/borrow/store', [borrowController::class,'store']); 
+        Route::get('/borrow/edit/{id}', [borrowController::class,'edit']); 
+        Route::get('/borrow/destroy/{id}', [borrowController::class,'destroy']); 
+        Route::put('/borrow/update/{id}', [borrowController::class,'update']);
+
     Route::get('/logout', function() {
         Auth::logout();
         redirect('/');

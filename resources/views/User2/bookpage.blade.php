@@ -35,11 +35,11 @@
                         </div>
                         <div class="btn-dit-list clearfix">
                            <div class="left-dit-p">
-                              <div class="prod-btn">
+                              <!-- <div class="prod-btn">
                                  <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> More details</a>
                                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i> Select this</a>
                                  <p>23 likes</p>
-                              </div>
+                              </div> -->
                            </div>
                            <div class="right-dit-p">
                               <div class="like-list">
@@ -77,7 +77,7 @@
                            </p>
                            <br>
                         </div>
-                        <div class="spe-a">
+                        <!-- <div class="spe-a">
                            <h4>More Information</h4>
                            <ul>
                               <li class="clearfix">
@@ -113,7 +113,7 @@
                                  </div>
                               </li>
                            </ul>
-                        </div>
+                        </div> -->
                      </div>
                   </div>
                   {{-- <div class="similar-box">
@@ -203,7 +203,7 @@
                <div class="col-md-3 col-sm-12">
                   <div class="price-box-right">
                      <h4>Available</h4>
-                     <h3>Remaining Stock : 3</h3>
+                     <h3>Remaining Stock : {{$data->stock}}</h3>
                      {{-- <p>Option</p>
                      <select class="form-control select2">
                         <option>Flying Carpet Green rug</option>
@@ -229,7 +229,16 @@
                         <option value="KS">Kansas</option>
                         <option value="KY">Kentucky</option>
                      </select> --}}
-                     <a href="#">Borrow</a>
+                     @guest
+                     <a href="#" disabled>Login First</a>
+                     @else
+                     <!-- <form action="{{ url('user2/req') }}" method="post" id="form_id">
+                              @csrf
+                              <input type="hidden" name="id_book" value="{{$data->id}}">
+                              <a> <button type="submit" style="background-color:#00C190;border:0;">Borrow</button> </a>
+                     </form> -->
+                     <a href="{{ url('user2/req/'.$data->id) }}">Borrow</a>
+                     @endguest
                      <h5><i class="fa fa-clock-o" aria-hidden="true"></i> <strong>1 Week </strong> Maximum borrowed</h5>
                   </div>
                </div>
