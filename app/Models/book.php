@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use App\Models\genre;
 use App\Models\category;
 use App\Models\User;
+use App\Models\borrow;
 
 class book extends Model
 {
@@ -23,11 +24,14 @@ class book extends Model
     protected $guarded = [];
 
     public function borrower(){
-        return $this->belongsToMany(User::class, 'borrow', 'id_book', 'id_borrower')->withPivot('date_borrow','date_due','date_return');
+        return $this->belongsToMany(User::class, 'borrow', 'id_book', 'id_borrower')->withPivot('date_borrow','date_due','date_return','status');
     }
 
     public function librarian(){
-        return $this->belongsToMany(User::class, 'borrow', 'id_book', 'id_librarian')->withPivot('date_borrow','date_due','date_return');
+        return $this->belongsToMany(User::class, 'borrow', 'id_book', 'id_librarian')->withPivot('date_borrow','date_due','date_return','status');
 
+    }
+    public function borrow(){
+        return $this->hasMany(borrow::class, 'id');
     }
 }

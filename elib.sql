@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2021 at 09:50 AM
+-- Generation Time: Jun 09, 2021 at 09:33 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -33,10 +33,17 @@ CREATE TABLE `book` (
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_category` bigint(20) NOT NULL,
   `id_genre` bigint(20) NOT NULL,
-  `cover` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cover` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'img/bookcov.jpg',
   `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `book`
+--
+
+INSERT INTO `book` (`id`, `title`, `id_category`, `id_genre`, `cover`, `description`, `stock`) VALUES
+(1, 'The Hat', 1, 1, 'img/bookcov.jpg', 'hasgdadasd', 4);
 
 -- --------------------------------------------------------
 
@@ -47,12 +54,21 @@ CREATE TABLE `book` (
 CREATE TABLE `borrow` (
   `id` bigint(20) NOT NULL,
   `id_borrower` bigint(20) NOT NULL,
-  `id_librarian` bigint(20) NOT NULL,
+  `id_librarian` bigint(20) DEFAULT NULL,
   `id_book` bigint(20) NOT NULL,
-  `date_borrow` datetime NOT NULL,
-  `date_due` datetime NOT NULL,
-  `date_return` datetime NOT NULL
+  `date_borrow` datetime DEFAULT NULL,
+  `date_due` datetime DEFAULT NULL,
+  `date_return` datetime DEFAULT NULL,
+  `status` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'requested'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `borrow`
+--
+
+INSERT INTO `borrow` (`id`, `id_borrower`, `id_librarian`, `id_book`, `date_borrow`, `date_due`, `date_return`, `status`) VALUES
+(1, 2, 1, 1, '2021-06-09 05:35:08', '2021-06-16 05:35:08', '2021-06-09 05:38:54', 'returned'),
+(2, 2, NULL, 1, NULL, NULL, NULL, 'refused');
 
 -- --------------------------------------------------------
 
@@ -206,8 +222,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `email_verified_at`, `password`, `id_level`, `profile`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@admin.com', NULL, '$2y$10$EhV.jW1pNyVW5RB/22D8yOVuYYYEHDVdyVGwaThlzwxYvpzJD3mKm', 1, 'img/profile.png', NULL, '2021-05-09 00:30:47', '2021-05-09 00:30:47'),
-(2, 'customer', 'customer@customer.com', NULL, '$2y$10$gPD.IT0jwi.FqMxVCZgs0OTNp1OEPOx27u.r771HeYhLGQBR04R/W', 2, 'img/profile.png', NULL, '2021-05-09 00:31:50', '2021-05-09 00:31:50');
+(1, 'admin', NULL, NULL, '$2y$10$DpTe0eWwx6MX.WoCwo2r1O8sPDeONl2G5XJXZlJbJdHQHb6LUu/.a', 1, 'img/profile.png', NULL, '2021-05-15 23:08:45', '2021-05-15 23:08:45'),
+(2, 'customer', 'customer@customer.com', NULL, '$2y$10$gPD.IT0jwi.FqMxVCZgs0OTNp1OEPOx27u.r771HeYhLGQBR04R/W', 2, 'img/profile.png', NULL, '2021-05-09 00:31:50', '2021-05-09 00:31:50'),
+(13, 'abdul', NULL, NULL, '$2y$10$kAvG4pXChJOVyC9Hila2Ce/N4ZGQtDdlMoSzDS9tzn25Wj9iXQ0.2', 1, 'img/48JMcxBrhccaDJG5nuyGV14EEhpFgco0VOVbpE2c.jpg', NULL, '2021-05-15 22:37:40', '2021-05-15 22:37:40');
 
 --
 -- Indexes for dumped tables
@@ -279,6 +296,7 @@ ALTER TABLE `report`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `users_email_unique` (`email`),
   ADD KEY `id_level` (`id_level`);
 
@@ -290,13 +308,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `borrow`
 --
 ALTER TABLE `borrow`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -338,7 +356,7 @@ ALTER TABLE `report`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables

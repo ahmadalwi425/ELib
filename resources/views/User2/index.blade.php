@@ -53,8 +53,17 @@
                            </div>
                            <a></a>
                            <div class="dit-btn clearfix">
-                              <a class="wis" href="{{ url('user2/bookpage',$bk->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i>Detail</a>
-                              <a class="thi" href="{{ url('user2/req',$bk->id) }}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Select</a>
+                              <a class="wis" href="{{ url('user2/bookpage',$bk->id) }}" style="width:100%;"><i class="fa fa-info-circle" aria-hidden="true"></i>See More Detail</a>
+                              <!-- @guest
+                              @else
+                              <form action="{{ url('user2/req') }}" method="post">
+                              @csrf
+                              <input type="hidden" name="id_book" value="{{$bk->id}}">
+                              <input class="thi" type="submit" value="Select">
+                              <a class="thi" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i> Select</a> 
+                              </form>
+                              
+                              @endguest -->
                            </div>
                         </a>
                      </div>
@@ -190,7 +199,10 @@
                         </div>
                         <div class="dit-btn clearfix">
                            <a class="wis" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> More Detail </a>
+                           @guest
+                           @else
                            <a class="thi" href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i> Select this </a>
+                           @endguest
                         </div>
                      </div>
                   </div>
