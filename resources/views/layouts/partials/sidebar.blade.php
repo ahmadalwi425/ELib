@@ -40,7 +40,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/book/index') }}" class="nav-link">
+            <a id="booklink" href="{{ url('/book/index') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>Book</p>
             </a>

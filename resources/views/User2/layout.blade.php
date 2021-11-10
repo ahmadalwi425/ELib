@@ -14,7 +14,7 @@
       <link rel="stylesheet" href="{{ asset('user2/css/animate-wow.css') }}">
       <!--main css-->
       <link rel="stylesheet" href="{{ asset('user2/css/style.css') }}">
-      <link rel="stylesheet" href="{{ asset('css/bootstrap-select.min.css') }}">
+      <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap-select.min.css') }}"> -->
       <link rel="stylesheet" href="{{ asset('user2/css/slick.min.css') }}">
       <!--responsive css-->
       <link rel="stylesheet" href="{{ asset('user2/css/responsive.css') }}">
@@ -32,7 +32,7 @@
                      <span class="icon-bar"></span> 
                      <span class="icon-bar"></span> 
                      </button>
-                     <a href="index.html" class="navbar-brand">ELIB<img src="{{("user2/images/logo.png")}}" alt="" /></a>
+                     <!-- <a href="index.html" class="navbar-brand">ELIB<img src="{{asset("user2/images/logo.png")}}" alt="" /></a> -->
                   </div>
                </div>
                <div class="col-md-8 col-sm-12">
@@ -45,9 +45,9 @@
                               <li><a class="custom-b" href="{{ route('register') }}">Sign up</a></li>
                            @else
                               @if(Auth::User()->id_level == 1)
-                              <li><a class="custom-b" href="{{ url('/user/index') }}">Manage Web</a></li>
+                              <li><a id="manage" class="custom-b" href="{{ url('/user/index') }}">Manage Web</a></li>
                               @endif
-                              <li><a class="custom-b" href="{{ route('logout') }}" >Log Out</a></li>
+                              <li><a id="logout" class="custom-b" href="{{ route('logout') }}" >Log Out</a></li>
                               <!-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                        @csrf
                                     </form> -->
@@ -143,7 +143,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-8">
-                  <p><img width="90" src="{{("user2/images/logo.png")}}" alt="#" style="margin-top: -5px;" /> All Rights Reserved.Elib © 2021</p>
+                  <!-- <p><img width="90" src="{{("user2/images/logo.png")}}" alt="#" style="margin-top: -5px;" /> All Rights Reserved.Elib © 2021</p> -->
                </div>
                <div class="col-md-4">
                   <ul class="list-inline socials">
@@ -180,10 +180,10 @@
       <script src="{{ asset('user2/js/jquery-1.12.4.min.js') }}"></script> 
       <!--bootstrap js--> 
       <script src="{{ asset('user2/js/bootstrap.min.js') }}"></script> 
-      <script src="{{ asset('user2/js/bootstrap-select.min.js') }}"></script>
+      <!-- <script src="{{ asset('user2/js/bootstrap-select.min.js') }}"></script> -->
       <script src="{{ asset('user2/js/slick.min.js') }}"></script> 
       <script src="{{ asset('user2/js/wow.min.js') }}"></script>
       <!--custom js--> 
-      <script src="{{ asset('user2/js/custom.js') }}"></script>
+      <!-- <script src="{{ asset('user2/js/custom.js') }}"></script> -->
    </body>
 </html>

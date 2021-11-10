@@ -15,7 +15,7 @@
                   <h1>Welcome To Elib Website<br>You can access us anywhere and anytime.</h1>
                   <h4>What would you like to find.</h4>
                   <div class="product-sh">
-                     <form action="{{url('user2/index')}}" method="GET">
+                     <form action="{{url('user2/index')}}" method="GET" id="search">
                      <div class="col-sm-6">
                         <div class="form-sh">
                            <input type="text" name="search" placeholder="Search something you love" >
@@ -53,7 +53,7 @@
                            </div>
                            <a></a>
                            <div class="dit-btn clearfix">
-                              <a class="wis" href="{{ url('user2/bookpage',$bk->id) }}" style="width:100%;"><i class="fa fa-info-circle" aria-hidden="true"></i>See More Detail</a>
+                              <a class="wis" href="{{ url('user2/bookpage',$bk->id) }}" id="moredetail" style="width:100%;"><i class="fa fa-info-circle" aria-hidden="true"></i>See More Detail</a>
                               <!-- @guest
                               @else
                               <form action="{{ url('user2/req') }}" method="post">

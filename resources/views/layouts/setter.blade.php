@@ -30,9 +30,9 @@
 <div class="wrapper">
 
   <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
+  <!-- <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="{{asset('storage/img/logo.png')}}" alt="AdminLTELogo" height="60" width="60">
-  </div>
+  </div> -->
 
   <!-- Navbar -->
   @yield('navbar')
@@ -87,10 +87,10 @@
 <!-- ChartJS -->
 <script src="{{asset('assets/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
-<script src="{{asset('assets/plugins/sparklines/sparkline.js')}}"></script>
+<!-- <script src="{{asset('assets/plugins/sparklines/sparkline.js')}}"></script> -->
 <!-- JQVMap -->
-<script src="{{asset('assets/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{asset('assets/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+<!-- <script src="{{asset('assets/plugins/jqvmap/jquery.vmap.min.js')}}"></script> -->
+<!-- <script src="{{asset('assets/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script> -->
 <!-- jQuery Knob Chart -->
 <script src="{{asset('assets/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
 <!-- daterangepicker -->
@@ -107,6 +107,6 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('assets/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('assets/dist/js/pages/dashboard.js')}}"></script>
+<!-- <script src="{{asset('assets/dist/js/pages/dashboard.js')}}"></script> -->
 </body>
 </html>
