@@ -12,7 +12,7 @@
         </div><div class="col-sm">
         </div>
         <div class="col-sm">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            <button type="button" id="adduser" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                 Add User
             </button>
 
@@ -29,7 +29,7 @@
                     
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form action="{{ url('user/store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ url('user/store') }}" id="formadd" method="post" enctype="multipart/form-data">
                         @csrf
                             <div class="form-group">
                                 <label for="username">Username</label>

@@ -113,9 +113,9 @@ input[type="submit"]:hover{
   </form>
 </div>
 
-  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+  <!-- <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
 
-  <script src="js/index.js"></script>
+  <script src="js/index.js"></script> -->
   
 
 <!-- <div class="container">

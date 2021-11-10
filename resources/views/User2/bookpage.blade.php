@@ -230,14 +230,14 @@
                         <option value="KY">Kentucky</option>
                      </select> --}}
                      @guest
-                     <a href="#" disabled>Login First</a>
+                     <a id="mustlogin" href="{{url('/login')}}" disabled>Login First</a>
                      @else
                      <!-- <form action="{{ url('user2/req') }}" method="post" id="form_id">
                               @csrf
                               <input type="hidden" name="id_book" value="{{$data->id}}">
                               <a> <button type="submit" style="background-color:#00C190;border:0;">Borrow</button> </a>
                      </form> -->
-                     <a href="{{ url('user2/req/'.$data->id) }}">Borrow</a>
+                     <a id="borrow" href="{{ url('user2/req/'.$data->id) }}">Borrow</a>
                      @endguest
                      <h5><i class="fa fa-clock-o" aria-hidden="true"></i> <strong>1 Week </strong> Maximum borrowed</h5>
                   </div>
